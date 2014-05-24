@@ -17,11 +17,175 @@ html
     &:hover
        text-decoration none
 
+section.answers+.partners,
+article+.partners
+  background url("../images/bg/answer.png") 50% 0 no-repeat
+  background-size 100% auto
+
+.answers
+  article
+    box-shadow 0 0 10px 0 rgba(0,0,0,.3)
+    display block
+    margin 0 0 24px
+    padding 0 
+    position relative
+    &:after
+      content "."
+      height 0
+      clear both
+      overflow hidden
+      font-size 0
+      line-height 0
+      text-indent -9999px
+      display block
+    .graph
+      position relative
+      box-sizing border-box
+      width 45%
+      float left
+      position relative
+      left 100%
+      margin-left -100%
+      padding 0 24px
+      overflow hidden
+      .graph-container-wrapper
+        min-width 630px
+        max-height 280px
+        text-align left
+      ul.graph-container
+        transform-origin 0 0
+        transform scale(.5)
+    .info
+      position relative
+      box-sizing border-box
+      width 55%
+      float left
+      position relative
+      left 100%
+      margin-left -55%
+      padding 24px 24px 24px 0 
+      nav
+        a 
+          color #ba131a
+          font-size 14px
+          margin 0 30px 0 0
+          padding 0 0 0 24px
+          &.experts
+            background url("../images/icon/expert.png") 0 50% no-repeat
+          &.details
+            background url("../images/icon/details.png") 0 50% no-repeat
+      .voted
+        font-size 14px
+        line-height 26px
+        margin 24px 0 
+        strong
+          font-size 24px
+          color #f00
+           
+      .question 
+        color #3C4247
+        font-size 18px
+        line-height 24px
+        margin 24px 0  
+      .role
+        box-shadow 3px 3px 3px 0 rgba(0,0,0,.35)
+        border 1px solid #cecece
+        background-color #d3edff
+        background linear-gradient(to bottom, rgba(212,237,255,1) 0%,rgba(159,197,248,1) 100%)
+        color #000
+        padding 6px 10px
+        display block   
+        font-size 14px
+        line-height 18px
+        margin-bottom 15px
+        text-shadow 1px 1px 0 #fff
+        
+
+.page>article
+  background url("../images/bg/answer.png") 50% 0 no-repeat
+  background-size 100% auto
+  color #333 
+  .wrapper+section
+    padding-top 0
+    background none
+  section
+    margin 24px 0 
+    background url("../images/bg/answer.png") 50% 0 no-repeat
+    background-size 100% auto
+  .title
+    margin-top 24px
+    border 1px solid #cecece
+    background-color #73A9D6
+    text-shadow 0 2px 2px rgba(0,0,0,.35)
+    color #fff
+    padding 9px 20px
+    display inline-block   
+    font-size 18px
+    line-height 24px
+  .sub-title
+    font-size 24px
+    color #BA131A
+    line-height 28px
+    margin-bottom 16px
+  ul
+    font-size 14px
+    line-height 16px
+    margin 16px 0 0
+    li:before
+      content "-"
+      width 30px
+      display inline-block
+      text-align center
+      vertical-align middle
+  p 
+    font-size 14px
+    line-height 16px
+    margin 16px 0 0
+
+.wrapper
+  max-width 952px 
+  margin 0 auto
+  &:after
+    content "."
+    font-size 0
+    height 0
+    line-height 0
+    overflow hidden
+    text-indent -9999px
+    clear both
+    display block
+
+.graph-block
+  background url("../images/bg/answer.png") 50% 0 no-repeat
+  background-size  100% auto
+  .voted
+    margin 20px 0 0 0
+    white-space nowrap 
+    float right
+    font-size 18px
+    line-height 26px
+    strong
+      font-size 24px 
+      color #F00 
+  .graph-container-wrapper
+    display block
+    clear both
+  .wrapper
+    .title
+      display block
+      float left
+      margin 24px 24px 24px 0 
+
 .page
-  max-width 988px 
-  padding 0 20px
+  // max-width 988px 
+  // padding 0 20px
   margin auto
-  .vote-block
+  .vote-wrapper
+    background url("../images/bg/answer.png") 50% 0 no-repeat
+    background-size  100% auto
+    padding 24px 0 0
+    margin 3px auto 0  
+  .vote-block 
     max-width 770px
     margin auto
     border-collapse separate
@@ -67,18 +231,13 @@ html
       tr
         border-top 1px solid #dbdbdb
       td:first-child
-        padding 0
-        vertical-align middle
-        text-align center
-        min-height 74px
-        height 74px
-        img
-          vertical-align top
-      td:first-child+td
-        padding 0 10px
+        padding 10px
         box-shadow  inset 0 1px 0 0 #fff,
                     inset 0 2px 0 0 #dbdbdb,
-                    inset 0 3px 0 0 #fff
+                    inset 0 3px 0 0 #fff,
+                    inset 0 -1px 0 0 #fff,
+                    inset 0 -2px 0 0 #dbdbdb,
+                    inset 0 -3px 0 0 #fff
       td
         &.yes
           background-color #F3FFEF
@@ -86,72 +245,142 @@ html
           background-color #fff0f0 
         &.pass
           background-color #fffae1
+        strong
+          font-weight 800
         span
           display none
-        box-shadow  inset 0 1px 0 0 #fff,
+        box-shadow  inset 16px 0 0 0 #fff,
+                    inset 0 1px 0 0 #fff,
                     inset 0 2px 0 0 #dbdbdb,
                     inset 0 3px 0 0 #fff,
-                    inset 16px 0 0 0 #fff
+                    inset 0 -1px 0 0 #fff,
+                    inset 0 -2px 0 0 #dbdbdb,
+                    inset 0 -3px 0 0 #fff
+                    
                     
                      
         color #262626
         font-size 14px
         line-height 18px
-        padding 0 10px 0 26px
+        padding 10px 10px 10px 26px
+        margin 0 0 0 26px
     tfoot
-      tr
-        border-top 1px solid #dbdbdb
       td
-        font-size 14px
-        line-height 18px
-        padding 12px 0 9px 16px
+        padding 24px 0
         text-align center
-        box-shadow  inset 0 1px 0 0 #fff,
-                    inset 0 2px 0 0 #dbdbdb,
-                    inset 0 3px 0 0 #fff
+        p
+          font-size 14px
+          line-height 36px
+          background-color #f1f1f1
   header
-    menu
-      margin 24px 0 6px
-      border solid #dbdbdb
-      border-width 1px 0
-      padding 1px 0
-      line-height 23px
-      &:after
-        content "."
-        height 0
-        font-size 0
-        line-height 0
-        overflow hidden
-        display block
-        text-indent -9999px
+    position relative
+    border-top 11px solid #fff
+    border-bottom 1px solid #b7b7b7
+    min-height 260px
+    background url("../images/bg/pattern.gif") 50% 50% repeat,
+               url("../images/bg/header.jpg") 50% 50% no-repeat
+    background-size auto, cover
+    .slogan
+      text-align center
+      margin 0 auto
+      padding 43px 0 0
+      width 354px
+      height 111px
+      background url("../images/bg/header.png") 50% 50% no-repeat
+      background-size cover
+      color #fff
+      text-shadow 1px 1px 2px rgba(0,0,0,.35)
+      white-space nowrap
+      h2
         clear both
-      nav.versions
+        font-size 24px
+      p
+        font-size 19px
+        word-spacing 8px
+        
+    nav.main
+      overflow hidden
+      text-overflow ellipsis
+      position absolute
+      bottom 0
+      left 24px
+      right 24px
+      margin auto
+      height 43px
+      max-width 952px
+      text-align center
+      border 1px solid #b7b7b7
+      border-width 1px 1px 0 
+      background #fff  
+      border-radius 5px 5px 0 0
+      line-height 43px
+      white-space nowrap
+      a
+        vertical-align top
+        padding 0 8px
+        font-size 15px
+        color #535353 
         display inline-block
-        font-size 12px
-        padding 0 10px
-        border-right 1px solid #dbdbdb
-        a
-          display inline-block
-          vertical-align middle
-          margin 0 4px 
-          
-      nav.main
-        display inline-block
-        font-size 16px
-        a
-          display inline-block
-          margin-left 14px
-          vertical-align middle
-          text-decoration none
-          &:hover
-            text-decoration underline
-            
+        line-height 43px
+        position relative
+        box-shadow  inset 0 12px 0 0 #fff,
+                    inset 0 -12px 0 0 #fff,
+                    inset -1px 0 0 0 #bbb,
+                    inset 1px 0 0 0 #bbb
+        &:first-child
+          box-shadow  inset 0 12px 0 0 #fff,
+                      inset 0 -12px 0 0 #fff,
+                      inset -1px 0 0 0 #bbb
+        &:last-child
+          box-shadow  inset 0 12px 0 0 #fff,
+                      inset 0 -12px 0 0 #fff,
+                      inset 1px 0 0 0 #bbb
+        &.selected:after
+          content '.'
+          overflow hidden
+          font-size 0
+          line-height 0
+          text-indent -9999px
+          height 3px
+          background-color #BA131A
+          display block
+          position absolute
+          top 0 
+          left 0
+          right 0
+        &.selected:before
+          overflow hidden
+          content '.'
+          font-size 0
+          line-height 0
+          text-indent -9999px
+          height 0
+          width 0
+          background-color #BA131A
+          display block
+          position absolute
+          top 3px
+          left 50%
+          margin-left -3px
+          border-width 3px 3px 0
+          border-style solid solid none
+          border-color #BA131A #fff #fff
+        &:first-child
+          border-left-style none
+          padding 0 8px  
+    menu
+      background-color #ba131a
+      height 43px
+      line-height 43px
+      color #FFF
+      box-shadow 0 1px 0 0 #fff
+      a
+        color #FFF  
       nav.languages
         float right
-        line-height 23px
-        padding-right 10px
         a
-          margin 5px 4px 
+          box-shadow 1px 1px 0 0 rgba(0,0,0,.35)
+          margin 14px 4px 15px
           float left
           font-size 0
           line-height 0
@@ -173,12 +402,19 @@ html
             background url("../images/lang/ru.jpg") 
           &[hreflang="ua"]
             background url("../images/lang/ua.jpg") 
-    .banner
-      display block
-      margin-bottom 6px
+      nav.versions
+        float left 
+        display inline-block
+        font-size 12px
+        a
+          display inline-block
+          vertical-align middle
+          margin 0 4px 
+          text-shadow 1px 1px 1px rgba(0,0,0,.35)
+          
+
   section
     padding 24px 0 0 
-    background url("../images/bg/section.jpg") 50% 0 no-repeat
     background-size 100% 
     min-height 120px
     &:after
@@ -193,6 +429,7 @@ html
     .title
       border 1px solid #cecece
       background-color #73A9D6
+      text-shadow 0 2px 2px rgba(0,0,0,.35)
       color #fff
       padding 9px 20px
       display inline-block   
@@ -200,17 +437,39 @@ html
       line-height 24px 
       margin-bottom 24px
     &.poll
+      background url("../images/bg/poll.jpg") 50% 50% no-repeat
+      background-size cover 
+      border-top 1px solid #b7b7b7
+      border-bottom 1px solid #b7b7b7
+      box-shadow inset 0  1px 0 0 #fff,
+                 inset 0 -1px 0 0 #fff
+      .title
+        box-shadow 3px 3px 3px 0 rgba(0,0,0,.35)
       &.current
+        margin-top -1px
+        padding-top 0
+        background #FFF
+        border-style none 
+        main
+          padding 24px 0 0
+          margin 0 0 3px
+          background url("../images/bg/poll-current.jpg") 50% 50% no-repeat
+          background-size cover 
+          border-top 1px solid #b7b7b7
+          border-bottom 1px solid #b7b7b7
         .info
           .details
             .question
-              font-size 24px
-              line-height 36px
+              font-size 19px
+              line-height 24px
               color #DC0000
               text-align center 
       .info
         margin 0 0 24px 
         position relative
+        &.video
+          .details
+            padding 0 190px 0 444px
         &:after
           content "."
           height 0
@@ -228,6 +487,21 @@ html
           width 170px
           height 170px
           z-index 1
+          box-shadow 3px 3px 3px 0 rgba(0,0,0,.35)
+          border 1px solid #fff
+          margin-top -1px
+        .video-container
+          background-color #000 
+          float left
+          position relative
+          left 100%
+          margin-left -100%
+          width 420px
+          height 260px
+          z-index 1
+          iframe
+            width 100%
+            height 100%
         .details
           width 100%
           z-index 0
@@ -248,6 +522,7 @@ html
             background url("../images/bg/vote.png") 50% 0 no-repeat
             background-size 100%
           .role
+            box-shadow 3px 3px 3px 0 rgba(0,0,0,.35)
             border 1px solid #cecece
             background-color #d3edff
             background linear-gradient(to bottom, rgba(212,237,255,1) 0%,rgba(159,197,248,1) 100%)
@@ -265,6 +540,7 @@ html
             line-height 24px
             color #3A4047 
             position relative
+            box-shadow 3px 3px 3px 0 rgba(0,0,0,.35)
             &:before
               content "."
               font-size 0
@@ -305,12 +581,14 @@ html
           z-index 1
           .countdown
           .length
+            text-shadow 1px 1px 2px rgba(0,0,0,.35)
             padding 17px 0 
             box-sizing border-box
             min-height 78px 
             border 1px solid #cecece
             background-color #7cb0f7
-            background linear-gradient(to bottom, rgba(124,177,247,1) 0%,rgba(48,127,218,1) 100%)
+            background linear-gradient(to bottom, #ba131a 0%,#991118 100%)
+            box-shadow 3px 3px 3px 0 rgba(0,0,0,.35)
             color #fff
             margin-top 14px
             font-size 14px
@@ -328,8 +606,10 @@ html
             box-sizing border-box
             min-height 170px 
             border 1px solid #cecece
+            text-shadow 1px 1px 2px rgba(0,0,0,.35)
             background-color #7cb0f7
-            background linear-gradient(to bottom, rgba(124,177,247,1) 0%,rgba(48,127,218,1) 100%)
+            background linear-gradient(to bottom, #ba131a 0%,#991118 100%)
+            box-shadow 3px 3px 3px 0 rgba(0,0,0,.35)
             color #fff
             font-size 14px
             line-height 18px
@@ -344,33 +624,167 @@ html
       .partners-list
         text-align justify
         font-size 0
+        margin 0 -7px 
         a
           display inline-block
           vertical-align middle
-          margin 0 12px 24px
+          margin 0 7px 24px
   footer
-    background url("../images/bg/section.jpg") 50% 0 no-repeat
-    background-size 100% 
-    padding 24px 0
-    text-align center
+    background-color #333
+    padding 24px 0 0
     color #7C7C7C
     font-size 14px
     line-height 18px 
+    .slogan
+      float left
+      margin-right 24px
+      h2
+        text-transform uppercase
+        font-size 22px
+        line-height 24px
+        letter-spacing -1px
+      p
+        text-transform lowercase
+        font-size 16px
+        line-height 18px
+        letter-spacing 1px
+        word-spacing 14px
+        
+        
+    nav
+      float left
+      margin 3px 24px 3px 0
+      a
+        float left
+        width 36px
+        height 36px
+        margin-right 7px
+        overflow hidden
+        text-indent -999px
+        transition opacity .35s
+        &:hover
+          opacity 0.75
+        &.tw
+          background url("../images/social/tw.png") 50% 50% no-repeat
+        &.fb
+          background url("../images/social/fb.png") 50% 50% no-repeat
+        &.vk
+          background url("../images/social/vk.png") 50% 50% no-repeat
+    address
+      color rgba(255,255,255,.75)
+      a
+        color inherit
+      float right
+      margin-bottom 24px
+    .copy
+      clear both
+      background-color #222
+      height 65px
+      line-height 65px
+      color #6E6E6E
+      text-align center 
+      margin-top 24px
+      
 
+@media screen and (max-width: 1000px)
+  .wrapper
+    margin 0 24px
+    
 
-
-@media screen and (max-width: 910px)
+@media screen and (max-width: 775px)
   .page
     header
-      menu
+      nav.main
+        height auto
         position relative
-        nav.versions
-          position absolute
-          left 0
-          top -24px
-          border-right-style none
+        overflow hidden
+        white-space normal 
+        margin 24px 24px 0
+        padding 0
+        left 0
+        font-size 0
+        right 0
+        text-align left
+        a,
+        a:first-child,
+        a:last-child
+          white-space nowrap
+          width 50%
+          padding 0
+          margin 0
+          position relative
+          box-shadow none
+          text-align center
           
-@media screen and (max-width: 710px)
+@media screen and (max-width: 950px)
+  .page
+    section.poll
+      .info.video
+        .video-container
+          display block
+          width auto
+          float none
+          height 400px
+          top 0
+          left 0
+          margin 0 -24px 24px
+        .details
+          padding 0
+          .question
+            &:after,
+            &:before
+              display none
+        nav
+          margin 0
+          width auto
+          clear both
+          float none
+          display block
+          position static
+          white-space nowrap
+          p.start-in
+            min-height 0
+            padding 17px 20px
+            display block
+            margin 0
+            height auto
+            time
+              margin 0
+          p.countdown, 
+          p.length
+            padding 17px 20px
+            margin 0
+            width 48%
+            display inline-block
+          p.length
+            float left
+          p.countdown
+            float right
+          
+@media screen and (max-width: 715px)
+  .answers
+    article
+      .graph
+        float none
+        left 0
+        margin-left 0
+        width auto
+        .graph-container-wrapper
+          min-width 0
+          max-height none
+          height 280px
+          width auto
+          .graph-container
+            transform scale(.5)
+      .info
+        float none
+        left 0
+        margin-left 0
+        width auto
+        padding 24px
+         
+        
+    
   html.flexbox
     .page
       section.partners 
@@ -378,6 +792,9 @@ html
           text-align left
           display block
   .page
+    .voted
+      clear both
+      float none
     .vote-block
       display block
       width auto
@@ -405,16 +822,8 @@ html
               margin-right 10px
               font-weight bold
               font-size 14px
-          td:first-child
-            text-align left
-            margin-bottom 36px
-            padding 0
-          td:first-child+td
-            b
-              display block
-              position absolute
-              bottom 100%
-              left 10px
+            strong
+              display inline-block
               font-size 18px
               line-height 36px
               font-weight bold
@@ -427,6 +836,8 @@ html
       transform-origin 50% 0
       margin-bottom -100px
     section.poll
+      .avatar
+        margin-bottom 24px
       .info
         .details
           padding-right 0
@@ -456,12 +867,6 @@ html
             float left
           p.countdown
             float right
-    header
-      menu
-        nav.languages
-          position absolute
-          right 0
-          bottom 100%
 
 @media screen and (max-width: 550px)
   .page
@@ -469,7 +874,7 @@ html
       transform scale(.6)
       transform-origin 0 0
       margin-bottom -120px
-          
+
 @media screen and (max-width: 500px)
   .page
     section.poll
@@ -486,13 +891,11 @@ html
           &:before,
           &:after
             display none
+          
+@media screen and (max-width: 450px)
+  .page
     header
-      padding-top 24px
       menu
+        height auto
         nav.languages
-          right auto
-          left 0
-          padding-left 10px
-        nav.versions
-          position absolute
-          top -48px
+          float none
